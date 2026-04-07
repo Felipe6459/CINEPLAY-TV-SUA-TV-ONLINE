@@ -1,7 +1,7 @@
 # CINEPLAY-TV-SUA-TV-ONLINE
 Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -9,13 +9,19 @@ Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 <title>Cineplay TV</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+max-width:100%;
+}
+
+html,body{
+overflow-x:hidden;
 font-family:Arial;
 color:#fff;
 text-align:center;
 background: linear-gradient(180deg,#0b0b0b,#1a0033);
-overflow-x:hidden;
 }
 
 /* fundo animado */
@@ -43,11 +49,13 @@ font-weight:bold;
 }
 
 /* banner */
-.banner{padding:60px 15px}
+.banner{
+padding:50px 15px;
+}
 
 .overlay{
 background:rgba(0,0,0,0.75);
-padding:25px;
+padding:20px;
 border-radius:12px;
 }
 
@@ -60,6 +68,7 @@ background: linear-gradient(45deg,#ff2d2d,#ff0066);
 color:#fff;
 text-decoration:none;
 border-radius:12px;
+width:90%;
 max-width:320px;
 font-weight:bold;
 box-shadow:0 0 15px rgba(255,0,100,0.6);
@@ -67,7 +76,7 @@ transition:0.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:scale(1.05);
 box-shadow:0 0 25px rgba(255,0,100,1);
 }
 
@@ -81,7 +90,9 @@ max-width:350px;
 transition:0.3s;
 }
 
-.card:hover{transform:scale(1.05)}
+.card:hover{
+transform:scale(1.03);
+}
 
 .highlight{
 border:2px solid #7b2cff;
@@ -105,7 +116,6 @@ border-radius:10px;
 font-size:13px;
 display:none;
 box-shadow:0 0 10px rgba(0,0,0,0.5);
-animation:fadeIn 0.5s;
 }
 
 /* whatsapp */
@@ -120,12 +130,13 @@ font-size:22px;
 text-decoration:none;
 }
 
-/* animações */
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
+/* imagem responsiva */
+img{
+width:100%;
+max-width:220px;
+border-radius:15px;
+margin-top:20px;
 }
-
 </style>
 </head>
 
@@ -163,8 +174,7 @@ to{opacity:1;transform:translateY(0)}
 👥 <span id="online">8</span> pessoas online
 </p>
 
-<img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg"
-style="width:200px;border-radius:15px;margin-top:20px;">
+<img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg">
 
 </div>
 </div>
@@ -186,19 +196,19 @@ style="width:200px;border-radius:15px;margin-top:20px;">
 <div class="card">
 <h3>1 Tela</h3>
 <div class="price">R$ 24,90</div>
-<a class="btn" href="#">Assinar</a>
+<a class="btn" href="https://wa.me/5582996062108?text=Quero%201%20tela">Assinar</a>
 </div>
 
 <div class="card highlight">
-<h3>2 Telas ⭐</h3>
+<h3>2 Telas ⭐ Mais Vendido</h3>
 <div class="price">R$ 34,90</div>
-<a class="btn" href="#">Assinar</a>
+<a class="btn" href="https://wa.me/5582996062108?text=Quero%202%20telas">Assinar</a>
 </div>
 
 <div class="card">
 <h3>3 Telas</h3>
 <div class="price">R$ 39,90</div>
-<a class="btn" href="#">Assinar</a>
+<a class="btn" href="https://wa.me/5582996062108?text=Quero%203%20telas">Assinar</a>
 </div>
 
 <a class="whatsapp-float" href="https://wa.me/5582996062108">💬</a>
