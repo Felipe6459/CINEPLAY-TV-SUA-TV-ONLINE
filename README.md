@@ -9,7 +9,11 @@ Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 <title>Cineplay TV</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 html,body{
 overflow-x:hidden;
@@ -17,6 +21,16 @@ font-family:Arial;
 background:#0b0b0b;
 color:#fff;
 text-align:center;
+}
+
+/* CORREÇÃO DO VAZAMENTO */
+.banner{
+background:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+padding:60px 15px;
+max-width:100%;
+overflow:hidden;
 }
 
 /* imagens seguras */
@@ -27,17 +41,10 @@ display:block;
 margin:auto;
 }
 
-/* header */
 .header{
 background:#7b2cff;
 padding:12px;
 font-weight:bold;
-}
-
-/* banner */
-.banner{
-background:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-padding:60px 15px;
 }
 
 .overlay{
@@ -46,12 +53,10 @@ padding:20px;
 border-radius:10px;
 }
 
-/* container */
 .container{
 padding:15px;
 }
 
-/* botão */
 .btn{
 display:block;
 margin:12px auto;
@@ -63,14 +68,8 @@ border-radius:12px;
 width:90%;
 max-width:320px;
 font-weight:bold;
-transition:0.2s;
 }
 
-.btn:active{
-transform:scale(0.96);
-}
-
-/* cards */
 .card{
 background:#1a1a1a;
 margin:15px auto;
@@ -89,7 +88,6 @@ color:#7b2cff;
 margin:10px 0;
 }
 
-/* avaliações */
 .review{
 background:#111;
 padding:12px;
@@ -107,7 +105,6 @@ height:40px;
 border-radius:50%;
 }
 
-/* popup */
 .popup{
 position:fixed;
 bottom:10px;
@@ -119,7 +116,6 @@ font-size:13px;
 display:none;
 }
 
-/* whatsapp */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -132,7 +128,6 @@ font-size:22px;
 text-decoration:none;
 }
 
-/* footer */
 .footer{
 margin-top:30px;
 padding:20px;
@@ -155,130 +150,52 @@ color:#aaa;
 <h1>🎬 Cineplay TV</h1>
 
 <h2 style="color:#ff4444;">
-🔥 Cancele Netflix, Prime e outros e pague muito mais barato
+🔥 Cancele Netflix e pague mais barato
 </h2>
 
 <p>
-🎬 +100 MIL conteúdos liberados<br>
-📺 Canais ao vivo + Premiere + Telecine<br>
-⚡ Sem travar | HD/FULL HD
+🎬 +100 MIL conteúdos<br>
+📺 Canais ao vivo<br>
+⚡ Sem travar
 </p>
 
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20teste%20gratis%20agora">
+<a class="btn" href="https://wa.me/5582996062108">
 🔥 TESTE GRÁTIS AGORA
 </a>
 
-<!-- BOTÃO INSTAGRAM (ADICIONADO AQUI 🔥) -->
+<!-- ✅ BOTÃO INSTAGRAM (AGORA FUNCIONANDO) -->
 <a class="btn" href="https://www.instagram.com/cineplayofc64" target="_blank">
 📸 Siga a gente no Instagram 🔥
 </a>
 
-<p style="color:#00ff88;font-weight:bold;">
-🚀 Acesso liberado em poucos minutos
+<p style="color:#00ff88;">
+🚀 Liberação imediata
 </p>
 
-<div style="margin-top:30px;">
-<div style="display:inline-block;background:#111;padding:10px;border-radius:30px;box-shadow:0 0 20px rgba(0,0,0,0.5);">
-<img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg"
-style="max-width:220px;border-radius:20px;">
-</div>
-</div>
+<img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg">
 
 </div>
 </div>
 
 <div class="container">
 
-<h2>⭐ Avaliações Reais</h2>
+<h2>⭐ Avaliações</h2>
 
 <div class="review">
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
-<p>Top demais, sem travar</p>
+<p>Top demais</p>
 </div>
 
 <div class="review">
 <img src="https://randomuser.me/api/portraits/women/45.jpg">
-<p>Melhor que Netflix</p>
+<p>Muito bom</p>
 </div>
 
-<h2>💰 Pagamento via Pix</h2>
-
-<p>⚡ Liberação rápida após envio do comprovante</p>
-
-<div style="background:#111;padding:15px;border-radius:10px;margin:15px;">
-<p><b>3c3a8735-4475-4340-8090-649f95432cfa</b></p>
-
-<button class="btn" onclick="copiarPix()">📋 Copiar chave Pix</button>
-
-<a class="btn" href="https://wa.me/5582996062108?text=Já%20fiz%20o%20pagamento%20via%20Pix">
-📲 Enviar comprovante
-</a>
-
-<p style="color:#7b2cff;">🔒 Pagamento seguro</p>
 </div>
-
-<h2>💰 Planos Mensais</h2>
-
-<div class="card">
-<h3>1 Tela</h3>
-<div class="price">R$ 24,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%201%20tela">Assinar</a>
-</div>
-
-<div class="card highlight">
-<h3>2 Telas ⭐ Mais Vendido</h3>
-<div class="price">R$ 34,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%202%20telas">Assinar</a>
-</div>
-
-<div class="card">
-<h3>3 Telas</h3>
-<div class="price">R$ 39,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%203%20telas">Assinar</a>
-</div>
-
-<h2>🔥 Planos Anuais</h2>
-
-<div class="card">
-<h3>1 Tela</h3>
-<div class="price">R$ 179,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%201%20tela">Assinar</a>
-</div>
-
-<div class="card highlight">
-<h3>2 Telas ⭐ Melhor Custo</h3>
-<div class="price">R$ 229,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%202%20telas">Assinar</a>
-</div>
-
-<div class="card">
-<h3>3 Telas</h3>
-<div class="price">R$ 264,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%203%20telas">Assinar</a>
-</div>
-
-<h2>📺 Compatibilidade</h2>
-<p>
-📱 Android<br>
-📺 Smart TV<br>
-📦 TV Box<br>
-💻 Computador
-</p>
-
-</div>
-
-<div class="footer">© Cineplay TV</div>
 
 <a class="whatsapp-float" href="https://wa.me/5582996062108">💬</a>
 
-<div class="popup" id="popup"></div>
-
 <script>
-function copiarPix(){
-navigator.clipboard.writeText("3c3a8735-4475-4340-8090-649f95432cfa");
-alert("Chave Pix copiada!");
-}
-
 let time=600;
 setInterval(()=>{
 let m=Math.floor(time/60);
@@ -287,24 +204,6 @@ document.getElementById('timer').innerHTML=m+":"+(s<10?'0':'')+s;
 time--;
 if(time<0) time=600;
 },1000);
-
-const nomes=[
-"João - SP","Maria - RJ","Carlos - MG","Ana - BA",
-"Pedro - CE","Lucas - PE","Fernanda - PR",
-"Tiago - Lisboa","Sofia - Porto","Miguel - Braga"
-];
-
-setInterval(()=>{
-let popup=document.getElementById("popup");
-let nome=nomes[Math.floor(Math.random()*nomes.length)];
-popup.innerHTML=nome+" acabou de ativar o teste grátis 🔥";
-popup.style.display="block";
-
-setTimeout(()=>{
-popup.style.display="none";
-},3000);
-
-},8000);
 </script>
 
 </body>
