@@ -1,7 +1,7 @@
 # CINEPLAY-TV-SUA-TV-ONLINE
 Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 
-
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -9,67 +9,135 @@ Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 <title>Cineplay TV</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;max-width:100%}
-html,body{overflow-x:hidden;font-family:Arial;background:#0b0b0b;color:#fff;text-align:center}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-.header{background:#7b2cff;padding:12px;font-weight:bold}
+html,body{
+overflow-x:hidden;
+font-family:Arial;
+background:#0b0b0b;
+color:#fff;
+text-align:center;
+}
 
+/* imagens seguras */
+img{
+max-width:100%;
+height:auto;
+display:block;
+margin:auto;
+}
+
+/* header */
+.header{
+background:#7b2cff;
+padding:12px;
+font-weight:bold;
+}
+
+/* banner */
 .banner{
 background:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-padding:70px 20px;
+padding:60px 15px;
 }
 
-.overlay{background:rgba(0,0,0,0.7);padding:30px;border-radius:10px}
+.overlay{
+background:rgba(0,0,0,0.7);
+padding:20px;
+border-radius:10px;
+}
 
-.container{padding:20px}
+/* container */
+.container{
+padding:15px;
+}
 
+/* botão */
 .btn{
-display:block;margin:12px auto;padding:15px;background:#ff2d2d;color:#fff;
-text-decoration:none;border-radius:12px;width:90%;max-width:320px;
-font-weight:bold;animation:pulsar 1.5s infinite;
+display:block;
+margin:12px auto;
+padding:15px;
+background:#ff2d2d;
+color:#fff;
+text-decoration:none;
+border-radius:12px;
+width:90%;
+max-width:320px;
+font-weight:bold;
+transition:0.2s;
 }
 
-.card{background:#1a1a1a;margin:15px auto;padding:20px;border-radius:15px;max-width:350px}
+.btn:active{
+transform:scale(0.96);
+}
 
-.highlight{border:2px solid #7b2cff}
+/* cards */
+.card{
+background:#1a1a1a;
+margin:15px auto;
+padding:20px;
+border-radius:15px;
+max-width:350px;
+}
 
-.price{font-size:22px;color:#7b2cff;margin:10px 0}
+.highlight{
+border:2px solid #7b2cff;
+}
 
+.price{
+font-size:22px;
+color:#7b2cff;
+margin:10px 0;
+}
+
+/* avaliações */
 .review{
-background:#111;padding:15px;margin:10px auto;border-radius:10px;
-max-width:320px;display:flex;align-items:center;gap:10px
+background:#111;
+padding:12px;
+margin:10px auto;
+border-radius:10px;
+max-width:320px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.review img{width:40px;height:40px;border-radius:50%}
+.review img{
+width:40px;
+height:40px;
+border-radius:50%;
+}
 
-.footer{margin-top:30px;padding:20px;font-size:14px;color:#aaa}
-
+/* popup */
 .popup{
-position:fixed;bottom:10px;left:10px;background:#111;padding:10px 15px;
-border-radius:10px;font-size:13px;display:none
+position:fixed;
+bottom:10px;
+left:10px;
+background:#111;
+padding:10px 15px;
+border-radius:10px;
+font-size:13px;
+display:none;
 }
 
+/* whatsapp */
 .whatsapp-float{
-position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
-padding:15px;border-radius:50%;text-decoration:none;font-size:22px
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:#fff;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
 }
 
-@keyframes flutuar{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-
-@keyframes pulsar{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
-
-@keyframes brilho{
-0%{opacity:0.6}
-50%{opacity:1}
-100%{opacity:0.6}
+/* footer */
+.footer{
+margin-top:30px;
+padding:20px;
+font-size:14px;
+color:#aaa;
 }
 </style>
 </head>
@@ -100,14 +168,19 @@ padding:15px;border-radius:50%;text-decoration:none;font-size:22px
 🔥 TESTE GRÁTIS AGORA
 </a>
 
+<!-- BOTÃO INSTAGRAM (ADICIONADO AQUI 🔥) -->
+<a class="btn" href="https://www.instagram.com/cineplayofc64" target="_blank">
+📸 Siga a gente no Instagram 🔥
+</a>
+
 <p style="color:#00ff88;font-weight:bold;">
 🚀 Acesso liberado em poucos minutos
 </p>
 
 <div style="margin-top:30px;">
-<div style="display:inline-block;background:#111;padding:10px;border-radius:30px;box-shadow:0 0 20px rgba(0,0,0,0.5);animation: flutuar 3s infinite;">
+<div style="display:inline-block;background:#111;padding:10px;border-radius:30px;box-shadow:0 0 20px rgba(0,0,0,0.5);">
 <img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg"
-style="width:220px;border-radius:20px;animation: brilho 2s infinite;">
+style="max-width:220px;border-radius:20px;">
 </div>
 </div>
 
