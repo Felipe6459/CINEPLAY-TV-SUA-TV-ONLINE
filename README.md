@@ -10,47 +10,45 @@ Cineplay TV - Filmes, séries e canais ao vivo em um só lugar
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{overflow-x:hidden;font-family:Arial;color:#fff;text-align:center}
-
 body{
+font-family:Arial;
+color:#fff;
+text-align:center;
 background: linear-gradient(180deg,#0b0b0b,#1a0033);
+overflow-x:hidden;
 }
 
 /* fundo animado */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background: radial-gradient(circle at 20% 30%, rgba(123,44,255,0.3), transparent),
             radial-gradient(circle at 80% 70%, rgba(255,0,100,0.3), transparent);
 z-index:-1;
-animation: moverBg 10s infinite alternate;
+animation:moverBg 12s infinite alternate;
 }
 
 @keyframes moverBg{
 0%{transform:translate(0,0)}
-100%{transform:translate(-50px, -50px)}
+100%{transform:translate(-40px,-40px)}
 }
 
 /* header */
 .header{
 background: linear-gradient(90deg,#7b2cff,#ff0066);
-padding:12px;
+padding:15px;
 font-weight:bold;
 }
 
 /* banner */
-.banner{
-padding:70px 20px;
-}
+.banner{padding:60px 15px}
 
 .overlay{
-background:rgba(0,0,0,0.7);
-padding:30px;
-border-radius:10px;
+background:rgba(0,0,0,0.75);
+padding:25px;
+border-radius:12px;
 }
 
 /* botão */
@@ -62,202 +60,145 @@ background: linear-gradient(45deg,#ff2d2d,#ff0066);
 color:#fff;
 text-decoration:none;
 border-radius:12px;
-width:90%;
 max-width:320px;
 font-weight:bold;
-animation:pulsar 1.5s infinite;
-box-shadow:0 0 15px rgba(255,0,100,0.5);
-position:relative;
-overflow:hidden;
+box-shadow:0 0 15px rgba(255,0,100,0.6);
+transition:0.3s;
 }
 
-.btn::after{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background: linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-}
-
-.btn:hover::after{
-left:100%;
-transition:0.5s;
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(255,0,100,1);
 }
 
 /* cards */
 .card{
-background: linear-gradient(145deg,#1a1a1a,#0d0d0d);
+background:#111;
 margin:15px auto;
 padding:20px;
-border-radius:20px;
+border-radius:15px;
 max-width:350px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
 transition:0.3s;
 }
 
-.card:hover{
-transform:scale(1.05);
+.card:hover{transform:scale(1.05)}
+
+.highlight{
+border:2px solid #7b2cff;
+box-shadow:0 0 15px #7b2cff;
 }
 
-.highlight{border:2px solid #7b2cff}
-
-.price{font-size:22px;color:#7b2cff;margin:10px 0}
-
-/* animações */
-@keyframes pulsar{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
+.price{
+font-size:22px;
+color:#7b2cff;
+margin:10px 0;
 }
 
-@keyframes flutuar{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-
-@keyframes brilho{
-0%{opacity:0.6}
-50%{opacity:1}
-100%{opacity:0.6}
-}
-
-.fade-in{
-opacity:0;
-transform:translateY(20px);
-animation:fadeIn 1s forwards;
-}
-
-@keyframes fadeIn{
-to{opacity:1;transform:translateY(0)}
-}
-
-/* extras */
+/* popup */
 .popup{
 position:fixed;
-bottom:10px;
-left:10px;
-background:#111;
-padding:10px 15px;
+bottom:20px;
+left:20px;
+background:#000;
+padding:12px 18px;
 border-radius:10px;
 font-size:13px;
 display:none;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+animation:fadeIn 0.5s;
 }
 
+/* whatsapp */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:#fff;
 padding:15px;
 border-radius:50%;
-text-decoration:none;
 font-size:22px;
+text-decoration:none;
 }
+
+/* animações */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="header">
-🔥 OFERTA LIMITADA TERMINA EM <span id="timer"></span>
-<p style="color:red;">⚠️ Restam poucas vagas hoje</p>
+🔥 OFERTA TERMINA EM <span id="timer">10:00</span>
+<p style="color:red;">⚠️ Poucas vagas disponíveis</p>
 </div>
 
-<div class="banner fade-in">
+<div class="banner">
 <div class="overlay">
 
-<h1 style="font-size:32px;">🎬 Cineplay TV</h1>
+<h1>🎬 Cineplay TV</h1>
 
 <h2 style="color:#ff4444;">
-🔥 Cancele Netflix, Prime e outros e pague muito mais barato
+🔥 Cancele Netflix e pague mais barato
 </h2>
 
 <p>
-🎬 +100 MIL conteúdos liberados<br>
-📺 Canais ao vivo + Premiere + Telecine<br>
+🎬 +100 MIL conteúdos<br>
+📺 Canais ao vivo + Premiere<br>
 ⚡ Sem travar | HD/FULL HD
 </p>
 
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20teste%20gratis%20agora">
-🔥 TESTE GRÁTIS AGORA
+<a class="btn" href="https://wa.me/5582996062108?text=Quero%20teste">
+🔥 TESTE GRÁTIS
 </a>
 
 <p style="color:#00ff88;font-weight:bold;">
-🚀 Acesso liberado em poucos minutos
+🚀 Liberação imediata
 </p>
 
 <p style="color:#00ff88;">
-👥 <span id="online"></span> pessoas vendo agora
+👥 <span id="online">8</span> pessoas online
 </p>
 
-<div style="margin-top:30px;">
-<div style="display:inline-block;background:#111;padding:10px;border-radius:30px;box-shadow:0 0 20px rgba(0,0,0,0.5);animation: flutuar 3s infinite;">
 <img src="https://i.postimg.cc/SsXBVsR2/Screenshot-20260406-193310-IBO-REVENDA.jpg"
-style="width:220px;border-radius:20px;animation: brilho 2s infinite;box-shadow:0 0 25px rgba(0,0,0,0.7);">
-</div>
-</div>
+style="width:200px;border-radius:15px;margin-top:20px;">
 
 </div>
 </div>
 
-<div class="container fade-in">
+<h2>💰 Pagamento Pix</h2>
 
-<h2>💰 Pagamento via Pix</h2>
+<div class="card">
+<p><b id="pix">3c3a8735-4475-4340-8090-649f95432cfa</b></p>
 
-<div style="background:#111;padding:15px;border-radius:10px;margin:15px;">
-<p><b>3c3a8735-4475-4340-8090-649f95432cfa</b></p>
+<button class="btn" onclick="copiarPix()">📋 Copiar Pix</button>
 
-<button class="btn" onclick="copiarPix()">📋 Copiar chave Pix</button>
-
-<a class="btn" href="https://wa.me/5582996062108?text=Já%20fiz%20o%20pagamento">
+<a class="btn" href="https://wa.me/5582996062108?text=Já paguei">
 📲 Enviar comprovante
 </a>
 </div>
 
-<h2>💰 Planos Mensais</h2>
+<h2>💰 Planos</h2>
 
 <div class="card">
 <h3>1 Tela</h3>
 <div class="price">R$ 24,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%201%20tela">Assinar</a>
+<a class="btn" href="#">Assinar</a>
 </div>
 
 <div class="card highlight">
-<h3>2 Telas ⭐ Mais Vendido</h3>
+<h3>2 Telas ⭐</h3>
 <div class="price">R$ 34,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%202%20telas">Assinar</a>
+<a class="btn" href="#">Assinar</a>
 </div>
 
 <div class="card">
 <h3>3 Telas</h3>
 <div class="price">R$ 39,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%203%20telas">Assinar</a>
-</div>
-
-<h2>🔥 Planos Anuais</h2>
-
-<div class="card">
-<h3>1 Tela</h3>
-<div class="price">R$ 179,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%201%20tela">Assinar</a>
-</div>
-
-<div class="card highlight">
-<h3>2 Telas ⭐ Melhor Custo</h3>
-<div class="price">R$ 229,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%202%20telas">Assinar</a>
-</div>
-
-<div class="card">
-<h3>3 Telas</h3>
-<div class="price">R$ 264,90</div>
-<a class="btn" href="https://wa.me/5582996062108?text=Quero%20anual%203%20telas">Assinar</a>
-</div>
-
+<a class="btn" href="#">Assinar</a>
 </div>
 
 <a class="whatsapp-float" href="https://wa.me/5582996062108">💬</a>
@@ -265,33 +206,54 @@ style="width:220px;border-radius:20px;animation: brilho 2s infinite;box-shadow:0
 <div class="popup" id="popup"></div>
 
 <script>
+
+// copiar pix
 function copiarPix(){
-navigator.clipboard.writeText("3c3a8735-4475-4340-8090-649f95432cfa");
-alert("Chave Pix copiada!");
+let pix = document.getElementById("pix").innerText;
+
+navigator.clipboard.writeText(pix)
+.then(()=>alert("Pix copiado!"))
+.catch(()=>alert("Erro ao copiar"));
 }
 
-let time=600;
+// timer
+let tempo = 600;
+
 setInterval(()=>{
-let m=Math.floor(time/60);
-let s=time%60;
-document.getElementById('timer').innerHTML=m+":"+(s<10?'0':'')+s;
-time--;
-if(time<0) time=600;
+let m = Math.floor(tempo/60);
+let s = tempo%60;
+
+document.getElementById("timer").innerHTML =
+m+":"+(s<10?"0"+s:s);
+
+tempo--;
+
+if(tempo <= 0) tempo = 600;
+
 },1000);
 
+// online fake
 setInterval(()=>{
-document.getElementById("online").innerHTML = Math.floor(Math.random()*15)+5;
+document.getElementById("online").innerHTML =
+Math.floor(Math.random()*20)+5;
 },3000);
 
-const nomes=["João - SP","Maria - RJ","Carlos - MG","Ana - BA","Tiago - Lisboa","Sofia - Porto"];
+// popup fake
+const nomes = ["João","Maria","Carlos","Ana","Pedro","Lucas"];
 
 setInterval(()=>{
-let popup=document.getElementById("popup");
-let nome=nomes[Math.floor(Math.random()*nomes.length)];
-popup.innerHTML="💰 "+nome+" acabou de assinar!";
+let popup = document.getElementById("popup");
+
+popup.innerHTML = "💰 "+nomes[Math.floor(Math.random()*nomes.length)]+" acabou de assinar";
+
 popup.style.display="block";
-setTimeout(()=>{popup.style.display="none";},3000);
+
+setTimeout(()=>{
+popup.style.display="none";
+},3000);
+
 },8000);
+
 </script>
 
 </body>
