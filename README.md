@@ -46,8 +46,17 @@ border-radius:10px;font-size:13px;display:none
 }
 
 .whatsapp-float{
-position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
-padding:15px;border-radius:50%;text-decoration:none;font-size:22px
+position:fixed;
+bottom:20px;
+right:20px;
+text-decoration:none;
+}
+
+.instagram-float{
+position:fixed;
+bottom:110px;
+right:20px;
+text-decoration:none;
 }
 
 @keyframes flutuar{
@@ -80,7 +89,7 @@ padding:15px;border-radius:50%;text-decoration:none;font-size:22px
 <div class="banner">
 <div class="overlay">
 
-<h1>🎬 Cineplay TV</h1>
+<img src="https://i.postimg.cc/8cS7DbFT/1000392886-removebg-preview.png" style="width:180px;background:transparent;">
 
 <h2 style="color:#ff4444;">
 🔥 Cancele Netflix, Prime e outros e pague muito mais barato
@@ -96,13 +105,32 @@ padding:15px;border-radius:50%;text-decoration:none;font-size:22px
 🔥 TESTE GRÁTIS AGORA
 </a>
 
-<!-- ✅ BOTÃO INSTAGRAM (ÚNICA ALTERAÇÃO) -->
-<a class="btn" href="https://www.instagram.com/cineplayofc64" target="_blank">
-📸 Siga a gente no Instagram 🔥
+<p style="color:#ff4444;font-weight:bold;">
+⚠️ Restam apenas <span id="testes">10</span> testes grátis disponíveis
+</p>
+
+<a class="btn" href="https://aftv.news/1072646">
+<img src="https://i.postimg.cc/63sGqhDZ/file-00000000d004720e80be58868406bf64.png" style="width:40px;vertical-align:middle;margin-right:8px;">
+📲 BAIXAR APLICATIVO
 </a>
 
+<!-- VIDEO ADICIONADO -->
+<div style="margin-top:20px;">
+<iframe width="100%" height="220"
+src="https://www.youtube.com/embed/K3QLrvM39fw"
+frameborder="0"
+allowfullscreen
+style="border-radius:10px;">
+</iframe>
+</div>
+
+<p style="font-size:13px;color:#aaa;">
+⚠️ Use no app Downloader (TV Box / Fire Stick)
+</p>
+
 <p style="color:#00ff88;font-weight:bold;">
-🚀 Acesso liberado em poucos minutos
+🚀 Acesso liberado em poucos minutos<br>
+👥 <span id="online">12</span> pessoas vendo agora
 </p>
 
 <div style="margin-top:30px;">
@@ -115,4 +143,100 @@ style="width:220px;border-radius:20px;animation: brilho 2s infinite;">
 </div>
 </div>
 
-<!-- RESTANTE DO SEU CÓDIGO CONTINUA IGUAL -->
+<div class="container">
+
+<h2>⭐ Avaliações Reais</h2>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<p>Top demais, sem travar</p>
+</div>
+
+<div class="review">
+<img src="https://randomuser.me/api/portraits/women/45.jpg">
+<p>Melhor que Netflix</p>
+</div>
+
+<h2>💰 Pagamento via Pix</h2>
+
+<p>⚡ Liberação rápida após envio do comprovante</p>
+
+<div style="background:#111;padding:15px;border-radius:10px;margin:15px;">
+<p><b>3c3a8735-4475-4340-8090-649f95432cfa</b></p>
+
+<button class="btn" onclick="copiarPix()">📋 Copiar chave Pix</button>
+
+<a class="btn" href="https://wa.me/5582996062108?text=Já%20fiz%20o%20pagamento%20via%20Pix">
+📲 Enviar comprovante
+</a>
+
+<p style="color:#7b2cff;">🔒 Pagamento seguro</p>
+</div>
+
+<!-- resto do site permanece igual -->
+
+<div class="footer">© Cineplay TV</div>
+
+<a class="whatsapp-float" href="https://wa.me/5582996062108">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:40px;height:40px;">
+</a>
+
+<a class="instagram-float" href="https://www.instagram.com/cineplayofc64" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:40px;height:40px;">
+</a>
+
+<div class="popup" id="popup"></div>
+
+<script>
+
+function copiarPix(){
+navigator.clipboard.writeText("3c3a8735-4475-4340-8090-649f95432cfa");
+alert("Chave Pix copiada!");
+}
+
+// TIMER
+let time=600;
+setInterval(()=>{
+let m=Math.floor(time/60);
+let s=time%60;
+document.getElementById('timer').innerHTML=m+":"+(s<10?'0':'')+s;
+time--;
+if(time<0) time=600;
+},1000);
+
+// POPUP
+const nomes=[
+"João - SP","Maria - RJ","Carlos - MG","Ana - BA",
+"Pedro - CE","Lucas - PE","Fernanda - PR"
+];
+
+setInterval(()=>{
+let popup=document.getElementById("popup");
+let nome=nomes[Math.floor(Math.random()*nomes.length)];
+popup.innerHTML=nome+" acabou de ativar o teste grátis 🔥";
+popup.style.display="block";
+
+setTimeout(()=>{
+popup.style.display="none";
+},3000);
+
+},8000);
+
+// CONTADOR ONLINE
+setInterval(()=>{
+document.getElementById("online").innerHTML = Math.floor(Math.random()*10)+10;
+},3000);
+
+// CONTADOR TESTES
+let testes = 10;
+setInterval(()=>{
+if(testes > 3){
+testes--;
+document.getElementById("testes").innerHTML = testes;
+}
+},30000);
+
+</script>
+
+</body>
+</html>
